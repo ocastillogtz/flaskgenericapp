@@ -1,0 +1,10 @@
+<!--
+The following div is a upload file input box
+
+-->
+
+        <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">{{ content["label"] }}</span>
+        <input type="file" class="form-control" name="{{ content["name"] }}" id="validatedCustomFile_{{ content["name"] }}" required>
+        <div class="invalid-feedback">File is invalid</div>
+      </div>

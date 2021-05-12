@@ -1,0 +1,62 @@
+[APP_INFO]
+name = My App
+short_description = This is a sample text for a thing
+#__# use a secret key that is complicated, generate some random string
+secret_key = whatever
+[AESTHETICS]
+#__# Navigation bar background color    (default is the following color pallete: #974E6A,#D76456,#BAB992,#D7DBAD,#8CAD8F)
+navbar_background_color = #974E6A
+#__# Font color: dark grey (dark) or light grey (light), choose the one that contrasts with the background
+navbar_light_or_dark = dark
+color_1 = #974E6A
+color_2 = #f0b380
+color_3 = #fff1a3
+color_4 = #d1dc9c
+color_5 = #8CAD8F
+#__# Use only the file name with extension of a file located in the folder static
+logo = logofordamos3.svg
+#_# Tabs
+[TABS]
+Home =
+FAQ =
+Colaborators = Demian,Oscar
+[TABS_DEFAULT_STATE]
+Home = active
+FAQ =
+Colaborators =
+[TABS_LINK_TO]
+Home = home
+FAQ = faq
+Colaborators = demian,oscar
+[FORM]
+#__# check the file form.py to see what do these elements are
+elements_0 = upload_input,up_file,Select you .vcf file.
+elements_1 = email_input,email,Email
+elements_2 = password_input,pass,Password
+elements_3 = confirm_checkbox,confirmbox,Hereby I confim that I am informed and I accept the data protection stuff...,You must confirm to continue.
+elements_4 =
+elements_5 =
+elements_6 =
+elements_7 =
+[FILE_CHARACTERISTICS]
+extension = .vcf
+[EMAIL]
+#__# In here we have as an example the parameters for using an outlook email account
+SERVER = smtp-mail.outlook.com
+PORT = 587
+FROM = ******@outlook.com
+PW = *******
+[EMAIL_CONTENT]
+greet = Dear {name},
+closing = Sincerely {app_name} Team.
+body = This is a sample text that includes stuff, please
+    check that you've got all the information that
+    you needed in this email, and write variables in { } brackets
+    to later format them and input stuff that you want
+[FAQ]
+#__# separate title from body with _-_
+elements_0 = How do I add more FAQ items_-_In the settings file, just add more stuff in the [FAQ] tab, while separating the title and the body with a separator
+elements_1 = How to do stuff 1_-_Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum hello
+elements_2 = How to do stuff 2_-_Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum is it me
+elements_3 = How to do stuff 3_-_Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum you are looking for?
+elements_4 = How to cite_-_You cite the authors stuff, you are welcome

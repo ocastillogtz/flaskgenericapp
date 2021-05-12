@@ -1,0 +1,16 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+{% for numeration,title,body in elements %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-heading_{{ numeration }}">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#panelsStayOpen-collapse_{{ numeration }}" aria-controls="panelsStayOpen-collapse_{{ numeration }}">
+        {{ title }}
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapse_{{ numeration }}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading_{{ numeration }}">
+      <div class="accordion-body">
+          {{ body }}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
