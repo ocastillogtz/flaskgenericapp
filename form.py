@@ -5,15 +5,14 @@ import logging
 from email_stuff import send_email,make_email_content
 from flask import render_template
 
-
 AVAILABLE_FORM_ELEMENTS_DICT = {"upload_input" : ["name","label"],
                                 "email_input" : ["name","label"],
                                 "password_input" : ["name","label"],
                                 "confirm_checkbox" : ["name","message","warning"],
                                 "shottext_input" : ["name","label"],
-                                "radio_buttons_input" : ["radio_title","radios"]
+                                "radio_buttons_input" : ["radio_title","radios"],
+                                "textarea_input" : ["name","label","prefilled"]
                                 }
-
 
 def generate_form_page(session="testing_session"):
     config = configparser.ConfigParser()

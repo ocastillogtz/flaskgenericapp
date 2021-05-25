@@ -5,7 +5,7 @@ import logging
 import configparser
 from waitress import serve
 from flask import Flask, render_template, url_for,redirect,request
-from routes import render_home, render_faq
+from routes import render_home, render_faq, render_generic_page
 
 app = Flask(__name__)
 
@@ -26,6 +26,10 @@ def faq():
 @app.route('/', methods=['GET', 'POST'])
 def initial():
     return redirect("/home")
+
+@app.route('/generic_page', methods=['GET'])
+def generic_page():
+    return render_generic_page(session="testing_session")
 
 
 if __name__ == '__main__':
