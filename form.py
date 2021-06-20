@@ -17,7 +17,7 @@ AVAILABLE_FORM_ELEMENTS_DICT = {"upload_input" : ["name","label"],
 def generate_form_page(session="testing_session"):
     config = configparser.ConfigParser()
     config.read('settings.ini')
-    form = """<form action="/home" method="POST" enctype="multipart/form-data">\n"""
+    form = """<form action="/home" method="GET" enctype="multipart/form-data">\n<input type="hidden" id="form_1" name="form_1" value="process_1">"""
     for item in config["FORM"]:
         if config["FORM"][item]:
             element_parameters = config["FORM"][item].split(",")

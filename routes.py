@@ -4,6 +4,21 @@ from form import generate_form_page,process_posted_form
 from navbar import generate_navbar_html
 from faq import generate_faq
 
+
+
+def process_client_data(data_form):
+    #todo pending: place here any function for computing data and then returns a job_id
+    job_id = "0000000000000000"
+    return job_id
+
+def render_show_job(job_id):
+    #todo pending: fetch the data from the job and display it
+    return render_template("generic_page.html",
+                           navbar=generate_navbar_html(),
+                           title="this is a test page for job id: " + str(job_id),
+                           sections_content="such content much wow",
+                           end="goodbye")
+
 def render_home(session="testing_session",request=""):
     config = configparser.ConfigParser()
     config.read('settings.ini')
