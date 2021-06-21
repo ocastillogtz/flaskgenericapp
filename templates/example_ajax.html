@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ navbar|safe }}
+
+<div class="container-lg">
+    <div class="container" style="background-color : {{ element_color }}; padding : 40px">
+         <div class="container" style="padding=15px;">
+             <div><h3>Example with tooltips</h3></div>
+            <div class="hoverToolTip">Hoover here</div>
+             <div><h3>Example with div</h3></div>
+             <div id="date1"></div>
+             <div id="time1"></div>
+         </div>
+    </div>
+</div>
+</body>
+
+<script>
+// functions constantly running
+$(document).ready(function(){
+    $('.hoverToolTip').tooltip({
+        title: hoverGetData,
+        html: true,
+        container: 'body',
+    });
+    // here we check to give change the divs for time and date values, this will be static, the tooltips updates each time you hover
+    $.ajax({
+             type: "GET",
+             url: '/getlocaldateandtime',
+             async: false,
+            dataType: 'json',
+             success: function(data) {
+                 $('#time1').html(data.time);
+                 $('#date1').html(data.date);
+             }
+         });
+     return false;
+
+});
+
+// subfunction to check the value to be assigned to the tooltips
+function hoverGetData(){
+    var element = $(this);
+    var localData = "error";
+    $.ajax('/getlocaldateandtime', {
+        async: false,
+        dataType: 'json',
+        success: function(data){
+           localdata = data.date + "  " + data.time
+        }
+    });
+    return localdata;
+}
+
+</script>
+
+
+
+</html>

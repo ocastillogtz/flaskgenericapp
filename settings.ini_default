@@ -19,14 +19,17 @@ logo = logofordamos3.svg
 [TABS]
 Home =
 FAQ =
+Ajax_Example =
 Colaborators = Demian,Oscar
 [TABS_DEFAULT_STATE]
 Home = active
 FAQ =
+Ajax_Example =
 Colaborators =
 [TABS_LINK_TO]
 Home = home
 FAQ = faq
+Ajax_Example = exampleajax
 Colaborators = demian,oscar
 [FORM]
 #__# check the file form.py to see what do these elements are

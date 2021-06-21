@@ -4,8 +4,9 @@ This is a Flask website template for a web tool or whatever
 import logging
 import configparser
 from waitress import serve
+import test_functions
 from flask import Flask, render_template, url_for,redirect,request
-from routes import render_home, render_faq, render_generic_page, process_client_data,render_show_job
+from routes import render_home, render_faq, render_generic_page, process_client_data,render_show_job,render_example_ajax
 
 app = Flask(__name__)
 
@@ -40,6 +41,13 @@ def initial():
 def generic_page():
     return render_generic_page(session="testing_session")
 
+@app.route('/exampleajax', methods=['GET'])
+def exampleajax():
+    return render_example_ajax(session="testing_session")
+
+@app.route('/getlocaldateandtime', methods=['GET'])
+def get_local_date_and_time():
+    return test_functions.get_date_and_hour()
 
 if __name__ == '__main__':
     config = configparser.ConfigParser()

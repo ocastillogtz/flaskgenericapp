@@ -5,6 +5,9 @@ from navbar import generate_navbar_html
 from faq import generate_faq
 
 
+def render_example_ajax(session="testing_session"):
+    return render_template("example_ajax.html",
+                           navbar=generate_navbar_html())
 
 def process_client_data(data_form):
     #todo pending: place here any function for computing data and then returns a job_id
